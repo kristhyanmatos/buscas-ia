@@ -54,7 +54,7 @@ public class Largura {
 
     public static void main(String args[]) {
         Mapa mapa = new Mapa();
-        Largura l = new Largura(mapa.getPortoUniao(), mapa.getCuritiba());
+        Largura l = new Largura(mapa.getArad(), mapa.getBucharest());
         l.buscar();
     }
 }

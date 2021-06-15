@@ -54,7 +54,7 @@ public class Profundidade {
 
     public static void main(String args[]) {
         Mapa mapa = new Mapa();
-        Profundidade p = new Profundidade(mapa.getPortoUniao(), mapa.getCuritiba());
+        Profundidade p = new Profundidade(mapa.getArad(), mapa.getBucharest());
         p.buscar();
     }
 }
