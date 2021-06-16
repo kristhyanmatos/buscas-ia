@@ -7,7 +7,7 @@ package grafocidades;
 
 /**
  *
- *@author Elton Alves
+ * @author Elton Alves
  */
 public class Mapa {
     private Cidade arad;
@@ -38,17 +38,17 @@ public class Mapa {
         zerind = new Cidade("Zerind");
         oradea = new Cidade("Oradea");
         bucharest = new Cidade("Bucharest");
-        
+
         arad.addCidadeAdjacente(new Adjacente(timisoara));
         arad.addCidadeAdjacente(new Adjacente(zerind));
         arad.addCidadeAdjacente(new Adjacente(sibiu));
-        
+
         timisoara.addCidadeAdjacente(new Adjacente(arad));
         timisoara.addCidadeAdjacente(new Adjacente(lugoj));
-        
+
         zerind.addCidadeAdjacente(new Adjacente(arad));
         zerind.addCidadeAdjacente(new Adjacente(oradea));
-        
+
         oradea.addCidadeAdjacente(new Adjacente(zerind));
         oradea.addCidadeAdjacente(new Adjacente(sibiu));
 
@@ -59,27 +59,27 @@ public class Mapa {
 
         fagaras.addCidadeAdjacente(new Adjacente(sibiu));
         fagaras.addCidadeAdjacente(new Adjacente(bucharest));
-        
+
         rimnicuVilcea.addCidadeAdjacente(new Adjacente(pitesti));
         rimnicuVilcea.addCidadeAdjacente(new Adjacente(sibiu));
         rimnicuVilcea.addCidadeAdjacente(new Adjacente(craiova));
-        
+
         pitesti.addCidadeAdjacente(new Adjacente(craiova));
         pitesti.addCidadeAdjacente(new Adjacente(bucharest));
-        
+
         lugoj.addCidadeAdjacente(new Adjacente(timisoara));
         lugoj.addCidadeAdjacente(new Adjacente(mehadla));
-        
+
         mehadla.addCidadeAdjacente(new Adjacente(lugoj));
         mehadla.addCidadeAdjacente(new Adjacente(dobreta));
-        
+
         dobreta.addCidadeAdjacente(new Adjacente(mehadla));
         dobreta.addCidadeAdjacente(new Adjacente(craiova));
-        
+
         craiova.addCidadeAdjacente(new Adjacente(pitesti));
         craiova.addCidadeAdjacente(new Adjacente(rimnicuVilcea));
         craiova.addCidadeAdjacente(new Adjacente(dobreta));
-       
+
         bucharest.addCidadeAdjacente(new Adjacente(pitesti));
         bucharest.addCidadeAdjacente(new Adjacente(fagaras));
     }
@@ -187,7 +187,5 @@ public class Mapa {
     public void setBucharest(Cidade bucharest) {
         this.bucharest = bucharest;
     }
-  
-    
 
 }

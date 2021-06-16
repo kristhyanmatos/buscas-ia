@@ -54,7 +54,9 @@ public class Largura {
 
     public static void main(String args[]) {
         Mapa mapa = new Mapa();
+        long startTime = System.currentTimeMillis();
         Largura l = new Largura(mapa.getArad(), mapa.getBucharest());
         l.buscar();
+        System.out.println("Tempo: " + (System.currentTimeMillis() - startTime) + "ms");
     }
 }

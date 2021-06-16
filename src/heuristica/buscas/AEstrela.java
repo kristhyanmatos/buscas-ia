@@ -41,6 +41,6 @@ public class AEstrela {
 		long startTime = System.currentTimeMillis();
 		AEstrela a = new AEstrela(mapa.getBucharest());
 		a.buscar(mapa.getArad());
-		System.out.println((System.currentTimeMillis() - startTime));
+		System.out.println("Tempo: " + (System.currentTimeMillis() - startTime) + "ms");
 	}
 }

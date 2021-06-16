@@ -54,7 +54,9 @@ public class Profundidade {
 
     public static void main(String args[]) {
         Mapa mapa = new Mapa();
+        long startTime = System.currentTimeMillis();
         Profundidade p = new Profundidade(mapa.getArad(), mapa.getBucharest());
         p.buscar();
+        System.out.println("Tempo: " + (System.currentTimeMillis() - startTime) + "ms");
     }
 }

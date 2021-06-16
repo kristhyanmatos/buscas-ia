@@ -46,8 +46,10 @@ public class Gulosa {
 
 	public static void main(String args[]) {
 		Mapa mapa = new Mapa();
+		long startTime = System.currentTimeMillis();
 		Gulosa g = new Gulosa(mapa.getBucharest());
 		g.buscar(mapa.getArad());
+		System.out.println("Tempo: " + (System.currentTimeMillis() - startTime) + "ms");
 
 	}
 
