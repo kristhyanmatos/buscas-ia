@@ -37,9 +37,10 @@ public class AEstrela {
 	}
 
 	public static void main(String args[]) {
-		Mapa mapa = new Mapa(); // acesso a toda as cidades
-		AEstrela a = new AEstrela(mapa.getCuritiba());
-		a.buscar(mapa.getPortoUniao());
-
+		Mapa mapa = new Mapa();
+		long startTime = System.currentTimeMillis();
+		AEstrela a = new AEstrela(mapa.getBucharest());
+		a.buscar(mapa.getArad());
+		System.out.println((System.currentTimeMillis() - startTime));
 	}
 }

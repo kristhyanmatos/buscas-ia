@@ -6,256 +6,207 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Mapa implements Serializable {
-	private Cidade portoUniao;
-	private Cidade pauloFrontin;
-	private Cidade canoinhas;
-	private Cidade irati;
-	private Cidade palmeira;
-	private Cidade campoLargo;
-	private Cidade curitiba;
-	private Cidade balsaNova;
-	private Cidade araucaria;
-	private Cidade saoJose;
-	private Cidade contenda;
-	private Cidade mafra;
-	private Cidade tijucas;
-	private Cidade lapa;
-	private Cidade saoMateus;
-	private Cidade tresBarras;
-	private List<Cidade> listCidades;
+	private Cidade arad;
+	private Cidade zerind;
+	private Cidade oradea;
+	private Cidade sibiu;
+	private Cidade rimnicuVilcea;
+	private Cidade fagaras;
+	private Cidade timisoara;
+	private Cidade lugoj;
+	private Cidade mehadia;
+	private Cidade dobreta;
+	private Cidade craiova;
+	private Cidade pitesti;
+	private Cidade bucharest;
+	private List<Cidade> listaCidades;
 
 	public Mapa() {
-		listCidades = new ArrayList<>();
-		portoUniao = new Cidade("Porto UniÃ£o", 203);
-		pauloFrontin = new Cidade("Paulo Frontin", 172);
-		canoinhas = new Cidade("Canoinhas", 141);
-		irati = new Cidade("Irati", 139);
-		palmeira = new Cidade("Palmeira", 59);
-		campoLargo = new Cidade("Campo Largo", 27);
-		curitiba = new Cidade("Curitiba", 0);
-		balsaNova = new Cidade("Balsa Nova", 41);
-		araucaria = new Cidade("AraucÃ¡ria", 23);
-		saoJose = new Cidade("SÃ£o JosÃ© dos Pinhais", 13);
-		contenda = new Cidade("Contenda", 39);
-		mafra = new Cidade("Mafra", 94);
-		tijucas = new Cidade("Tijucas do Sul", 56);
-		lapa = new Cidade("Lapa", 74);
-		saoMateus = new Cidade("SÃ£o Mateus do Sul", 123);
-		tresBarras = new Cidade("TrÃªs Barras", 131);
+		arad = new Cidade("Arad", 366);
+		bucharest = new Cidade("Bucharest", 0);
+		craiova = new Cidade("Craiova", 160);
+		dobreta = new Cidade("Dobreta", 242);
+		fagaras = new Cidade("Faguras", 178);
+		lugoj = new Cidade("Lugoj", 244);
+		mehadia = new Cidade("Merradia", 241);
+		oradea = new Cidade("Oreadea", 234);
+		pitesti = new Cidade("Pitesti", 98);
+		rimnicuVilcea = new Cidade("Rimnicu Vilcea", 193);
+		sibiu = new Cidade("Sibiu", 253);
+		timisoara = new Cidade("Timisoara", 329);
+		zerind = new Cidade("Zerind", 374);
+		listaCidades = new ArrayList<>();
 
-		portoUniao.addCidadeAdjacente(new Adjacente(pauloFrontin, 46)); // distância entre as cidades
-		portoUniao.addCidadeAdjacente(new Adjacente(canoinhas, 78));
-		portoUniao.addCidadeAdjacente(new Adjacente(saoMateus, 87));
-		listCidades.add(portoUniao);
+		arad.addCidadeAdjacente(new Adjacente(zerind, 75));
+		arad.addCidadeAdjacente(new Adjacente(timisoara, 118));
+		arad.addCidadeAdjacente(new Adjacente(sibiu, 87));
+		listaCidades.add(arad);
 
-		pauloFrontin.addCidadeAdjacente(new Adjacente(portoUniao, 46));
-		pauloFrontin.addCidadeAdjacente(new Adjacente(irati, 75));
-		listCidades.add(pauloFrontin);
+		zerind.addCidadeAdjacente(new Adjacente(arad, 75));
+		zerind.addCidadeAdjacente(new Adjacente(oradea, 71));
+		listaCidades.add(zerind);
 
-		canoinhas.addCidadeAdjacente(new Adjacente(portoUniao, 78));
-		canoinhas.addCidadeAdjacente(new Adjacente(tresBarras, 12));
-		canoinhas.addCidadeAdjacente(new Adjacente(mafra, 66));
-		listCidades.add(canoinhas);
+		oradea.addCidadeAdjacente(new Adjacente(zerind, 71));
+		oradea.addCidadeAdjacente(new Adjacente(sibiu, 151));
+		listaCidades.add(oradea);
 
-		irati.addCidadeAdjacente(new Adjacente(pauloFrontin, 75));
-		irati.addCidadeAdjacente(new Adjacente(palmeira, 75));
-		irati.addCidadeAdjacente(new Adjacente(saoMateus, 57));
-		listCidades.add(irati);
+		sibiu.addCidadeAdjacente(new Adjacente(fagaras, 99));
+		sibiu.addCidadeAdjacente(new Adjacente(rimnicuVilcea, 80));
+		listaCidades.add(sibiu);
 
-		palmeira.addCidadeAdjacente(new Adjacente(irati, 75));
-		palmeira.addCidadeAdjacente(new Adjacente(saoMateus, 77));
-		palmeira.addCidadeAdjacente(new Adjacente(campoLargo, 55));
-		listCidades.add(palmeira);
+		fagaras.addCidadeAdjacente(new Adjacente(sibiu, 99));
+		fagaras.addCidadeAdjacente(new Adjacente(bucharest, 211));
+		listaCidades.add(fagaras);
 
-		campoLargo.addCidadeAdjacente(new Adjacente(palmeira, 55));
-		campoLargo.addCidadeAdjacente(new Adjacente(balsaNova, 22));
-		campoLargo.addCidadeAdjacente(new Adjacente(curitiba, 29));
-		listCidades.add(campoLargo);
+		rimnicuVilcea.addCidadeAdjacente(new Adjacente(pitesti, 97));
+		rimnicuVilcea.addCidadeAdjacente(new Adjacente(craiova, 146));
+		listaCidades.add(rimnicuVilcea);
 
-		curitiba.addCidadeAdjacente(new Adjacente(campoLargo, 29));
-		curitiba.addCidadeAdjacente(new Adjacente(balsaNova, 51));
-		curitiba.addCidadeAdjacente(new Adjacente(araucaria, 37));
-		curitiba.addCidadeAdjacente(new Adjacente(saoJose, 15));
-		listCidades.add(curitiba);
+		rimnicuVilcea.addCidadeAdjacente(new Adjacente(pitesti, 97));
+		rimnicuVilcea.addCidadeAdjacente(new Adjacente(craiova, 146));
+		listaCidades.add(rimnicuVilcea);
 
-		balsaNova.addCidadeAdjacente(new Adjacente(curitiba, 51));
-		balsaNova.addCidadeAdjacente(new Adjacente(campoLargo, 22));
-		balsaNova.addCidadeAdjacente(new Adjacente(contenda, 19));
-		listCidades.add(balsaNova);
+		pitesti.addCidadeAdjacente(new Adjacente(rimnicuVilcea, 97));
+		pitesti.addCidadeAdjacente(new Adjacente(craiova, 138));
+		pitesti.addCidadeAdjacente(new Adjacente(bucharest, 101));
+		listaCidades.add(pitesti);
 
-		araucaria.addCidadeAdjacente(new Adjacente(curitiba, 37));
-		araucaria.addCidadeAdjacente(new Adjacente(contenda, 18));
-		listCidades.add(araucaria);
+		craiova.addCidadeAdjacente(new Adjacente(pitesti, 138));
+		craiova.addCidadeAdjacente(new Adjacente(rimnicuVilcea, 146));
+		craiova.addCidadeAdjacente(new Adjacente(dobreta, 120));
+		listaCidades.add(craiova);
 
-		saoJose.addCidadeAdjacente(new Adjacente(curitiba, 15));
-		saoJose.addCidadeAdjacente(new Adjacente(tijucas, 49));
-		listCidades.add(saoJose);
+		dobreta.addCidadeAdjacente(new Adjacente(mehadia, 75));
+		dobreta.addCidadeAdjacente(new Adjacente(craiova, 120));
+		listaCidades.add(dobreta);
 
-		contenda.addCidadeAdjacente(new Adjacente(balsaNova, 19));
-		contenda.addCidadeAdjacente(new Adjacente(araucaria, 18));
-		contenda.addCidadeAdjacente(new Adjacente(lapa, 26));
-		listCidades.add(contenda);
+		mehadia.addCidadeAdjacente(new Adjacente(dobreta, 75));
+		mehadia.addCidadeAdjacente(new Adjacente(lugoj, 70));
+		listaCidades.add(mehadia);
 
-		mafra.addCidadeAdjacente(new Adjacente(tijucas, 99));
-		mafra.addCidadeAdjacente(new Adjacente(lapa, 57));
-		mafra.addCidadeAdjacente(new Adjacente(canoinhas, 66));
-		listCidades.add(mafra);
+		lugoj.addCidadeAdjacente(new Adjacente(mehadia, 70));
+		lugoj.addCidadeAdjacente(new Adjacente(timisoara, 111));
+		listaCidades.add(lugoj);
 
-		tijucas.addCidadeAdjacente(new Adjacente(mafra, 99));
-		tijucas.addCidadeAdjacente(new Adjacente(saoJose, 49));
-		listCidades.add(tijucas);
+		timisoara.addCidadeAdjacente(new Adjacente(lugoj, 111));
+		timisoara.addCidadeAdjacente(new Adjacente(arad, 118));
+		listaCidades.add(timisoara);
 
-		lapa.addCidadeAdjacente(new Adjacente(contenda, 26));
-		lapa.addCidadeAdjacente(new Adjacente(saoMateus, 60));
-		lapa.addCidadeAdjacente(new Adjacente(mafra, 57));
-		listCidades.add(lapa);
-
-		saoMateus.addCidadeAdjacente(new Adjacente(palmeira, 77));
-		saoMateus.addCidadeAdjacente(new Adjacente(irati, 57));
-		saoMateus.addCidadeAdjacente(new Adjacente(lapa, 60));
-		saoMateus.addCidadeAdjacente(new Adjacente(tresBarras, 43));
-		saoMateus.addCidadeAdjacente(new Adjacente(portoUniao, 87));
-		listCidades.add(saoMateus);
-
-		tresBarras.addCidadeAdjacente(new Adjacente(saoMateus, 43));
-		tresBarras.addCidadeAdjacente(new Adjacente(canoinhas, 12));
-		listCidades.add(tresBarras);
+		bucharest.addCidadeAdjacente(new Adjacente(fagaras, 211));
+		bucharest.addCidadeAdjacente(new Adjacente(pitesti, 101));
+		listaCidades.add(bucharest);
 	}
 
-	public Cidade getPortoUniao() {
-		return portoUniao;
+	public Cidade getArad() {
+		return arad;
 	}
 
-	public void setPortoUniao(Cidade portoUniao) {
-		this.portoUniao = portoUniao;
+	public void setArad(Cidade arad) {
+		this.arad = arad;
 	}
 
-	public Cidade getPauloFrontin() {
-		return pauloFrontin;
+	public Cidade getZerind() {
+		return zerind;
 	}
 
-	public void setPauloFrontin(Cidade pauloFrontin) {
-		this.pauloFrontin = pauloFrontin;
+	public void setZerind(Cidade zerind) {
+		this.zerind = zerind;
 	}
 
-	public Cidade getCanoinhas() {
-		return canoinhas;
+	public Cidade getOradea() {
+		return oradea;
 	}
 
-	public void setCanoinhas(Cidade canoinhas) {
-		this.canoinhas = canoinhas;
+	public void setOradea(Cidade oradea) {
+		this.oradea = oradea;
 	}
 
-	public Cidade getIrati() {
-		return irati;
+	public Cidade getSibiu() {
+		return sibiu;
 	}
 
-	public void setIrati(Cidade irati) {
-		this.irati = irati;
+	public void setSibiu(Cidade sibiu) {
+		this.sibiu = sibiu;
 	}
 
-	public Cidade getPalmeira() {
-		return palmeira;
+	public Cidade getRimnicuVilcea() {
+		return rimnicuVilcea;
 	}
 
-	public void setPalmeira(Cidade palmeira) {
-		this.palmeira = palmeira;
+	public void setRimnicuVilcea(Cidade rimnicuVilcea) {
+		this.rimnicuVilcea = rimnicuVilcea;
 	}
 
-	public Cidade getCampoLargo() {
-		return campoLargo;
+	public Cidade getFagaras() {
+		return fagaras;
 	}
 
-	public void setCampoLargo(Cidade campoLargo) {
-		this.campoLargo = campoLargo;
+	public void setFagaras(Cidade fagaras) {
+		this.fagaras = fagaras;
 	}
 
-	public Cidade getCuritiba() {
-		return curitiba;
+	public Cidade getTimisoara() {
+		return timisoara;
 	}
 
-	public void setCuritiba(Cidade curitiba) {
-		this.curitiba = curitiba;
+	public void setTimisoara(Cidade timisoara) {
+		this.timisoara = timisoara;
 	}
 
-	public Cidade getBalsaNova() {
-		return balsaNova;
+	public Cidade getLugoj() {
+		return lugoj;
 	}
 
-	public void setBalsaNova(Cidade balsaNova) {
-		this.balsaNova = balsaNova;
+	public void setLugoj(Cidade lugoj) {
+		this.lugoj = lugoj;
 	}
 
-	public Cidade getAraucaria() {
-		return araucaria;
+	public Cidade getMehadia() {
+		return mehadia;
 	}
 
-	public void setAraucaria(Cidade araucaria) {
-		this.araucaria = araucaria;
+	public void setMehadia(Cidade mehadia) {
+		this.mehadia = mehadia;
 	}
 
-	public Cidade getSaoJose() {
-		return saoJose;
+	public Cidade getDobreta() {
+		return dobreta;
 	}
 
-	public void setSaoJose(Cidade saoJose) {
-		this.saoJose = saoJose;
+	public void setDobreta(Cidade dobreta) {
+		this.dobreta = dobreta;
 	}
 
-	public Cidade getContenda() {
-		return contenda;
+	public Cidade getCraiova() {
+		return craiova;
 	}
 
-	public void setContenda(Cidade contenda) {
-		this.contenda = contenda;
+	public void setCraiova(Cidade craiova) {
+		this.craiova = craiova;
 	}
 
-	public Cidade getMafra() {
-		return mafra;
+	public Cidade getPitesti() {
+		return pitesti;
 	}
 
-	public void setMafra(Cidade mafra) {
-		this.mafra = mafra;
+	public void setPitesti(Cidade pitesti) {
+		this.pitesti = pitesti;
 	}
 
-	public Cidade getTijucas() {
-		return tijucas;
+	public Cidade getBucharest() {
+		return bucharest;
 	}
 
-	public void setTijucas(Cidade tijucas) {
-		this.tijucas = tijucas;
+	public void setBucharest(Cidade bucharest) {
+		this.bucharest = bucharest;
 	}
 
-	public Cidade getLapa() {
-		return lapa;
+	public List<Cidade> getListaCidades() {
+		return listaCidades;
 	}
 
-	public void setLapa(Cidade lapa) {
-		this.lapa = lapa;
-	}
-
-	public Cidade getSaoMateus() {
-		return saoMateus;
-	}
-
-	public void setSaoMateus(Cidade saoMateus) {
-		this.saoMateus = saoMateus;
-	}
-
-	public Cidade getTresBarras() {
-		return tresBarras;
-	}
-
-	public void setTresBarras(Cidade tresBarras) {
-		this.tresBarras = tresBarras;
-	}
-
-	public List<Cidade> getListCidades() {
-		return listCidades;
-	}
-
-	public void setListCidades(List<Cidade> listCidades) {
-		this.listCidades = listCidades;
+	public void setListaCidades(List<Cidade> listaCidades) {
+		this.listaCidades = listaCidades;
 	}
 
 }
