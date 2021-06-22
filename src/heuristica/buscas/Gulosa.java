@@ -1,8 +1,5 @@
 package heuristica.buscas;
 
-//import java.util.ArrayList;
-//import java.util.List;
-
 import heuristica.estrutura.VetorOrdenado;
 import heuristica.grafocidades.Adjacente;
 import heuristica.grafocidades.Cidade;
@@ -12,14 +9,12 @@ public class Gulosa {
 	private VetorOrdenado fronteira;
 	private Cidade objetivo;
 	private boolean achou;
-	// public List<String> caminhoCidades = new ArrayList<>();
 
 	public Gulosa(Cidade objetivo) {
 		this.objetivo = objetivo;
 		achou = false;
 	}
 
-	// public List<String> buscar(Cidade atual)
 	public void buscar(Cidade atual) {
 		System.out.println("\nAtual:" + atual.getNome());
 		atual.setVisitado(true);
@@ -36,12 +31,10 @@ public class Gulosa {
 			}
 			fronteira.mostrar();
 			if (fronteira.getPrimeiro() != null) {
-				// caminhoCidades.add(fronteira.getPrimeiro().getNome());
 				buscar(fronteira.getPrimeiro());
 			}
 		}
 
-		// return caminhoCidades;
 	}
 
 	public static void main(String args[]) {

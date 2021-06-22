@@ -9,7 +9,6 @@ public class AEstrela {
 	private VetorOrdenadoAdjacente fronteira;
 	private Cidade objetivo;
 	private boolean achou;
-	// public List<String> caminhoCidades = new ArrayList<>();
 
 	public AEstrela(Cidade objetivo) {
 		this.objetivo = objetivo;
@@ -23,7 +22,7 @@ public class AEstrela {
 		if (atual == objetivo) {
 			achou = true;
 		} else {
-			fronteira = new VetorOrdenadoAdjacente(atual.getAdjacentes().size()); // percorre os adjacentes
+			fronteira = new VetorOrdenadoAdjacente(atual.getAdjacentes().size());
 			for (Adjacente a : atual.getAdjacentes()) {
 				if (!a.getCidade().isVisitado()) {
 					a.getCidade().setVisitado(true);
@@ -33,7 +32,7 @@ public class AEstrela {
 			fronteira.mostrar();
 			buscar(fronteira.getPrimeiro());
 		}
-		// return null;
+
 	}
 
 	public static void main(String args[]) {
